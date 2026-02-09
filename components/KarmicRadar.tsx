@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnalysisResult, RayId, SystemType } from '../types';
 import { RAYS } from '../constants';
-import { Scroll, AlertCircle, Scale } from 'lucide-react';
+import { Scroll, AlertCircle, Scale, Activity } from 'lucide-react';
 
 interface Props {
   result: AnalysisResult;
@@ -20,7 +20,7 @@ export const KarmicRadar: React.FC<Props> = ({ result }) => {
         <Scale className="w-5 h-5" /> Karmic & Draconic Study
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
         <div>
           <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">The Draconic Chart (Soul Memory)</h4>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">
@@ -57,6 +57,27 @@ export const KarmicRadar: React.FC<Props> = ({ result }) => {
            </div>
         </div>
       </div>
+
+      {/* New Section: Draconic Aspects */}
+      {draconic.sunAspects && draconic.sunAspects.length > 0 && (
+        <div className="border-t border-red-900/30 pt-4">
+          <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+             <Activity className="w-4 h-4 text-red-400" />
+             Draconic Sun Aspects (Soul Contract Dynamics)
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             {draconic.sunAspects.map((aspect, idx) => (
+                <div key={idx} className="bg-slate-900/40 p-3 rounded border border-slate-800 hover:border-red-500/50 transition-colors">
+                   <div className="flex justify-between items-center mb-1">
+                      <span className="text-red-200 font-cinzel text-sm">Sun {aspect.type} {aspect.planet}</span>
+                      <span className="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">Orb: {aspect.orb}°</span>
+                   </div>
+                   <p className="text-xs text-slate-300 italic">"{aspect.interpretation}"</p>
+                </div>
+             ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-6 pt-4 border-t border-white/5">
         <div className="flex items-center gap-2 text-sm text-slate-400">

@@ -31,6 +31,13 @@ export interface PlanetPosition {
   ray: RayId; // Esoteric Ray associated with the planet/sign combo
 }
 
+export interface Aspect {
+  planet: string;
+  type: string; // e.g. "Trine", "Square"
+  orb: number;
+  interpretation: string;
+}
+
 export interface ChartData {
   system: SystemType;
   sun: PlanetPosition;
@@ -39,6 +46,7 @@ export interface ChartData {
   ascendant?: PlanetPosition; // Not for Helio
   rulerRay: RayId;
   interpretation: string;
+  sunAspects?: Aspect[]; // New field for Draconic Sun aspects
 }
 
 export interface StarseedConnection {

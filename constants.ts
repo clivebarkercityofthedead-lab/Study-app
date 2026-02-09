@@ -148,3 +148,57 @@ export const ESOTERIC_MASTERS: UserProfile[] = [
     birthPlace: "Kesswil, Switzerland"
   }
 ];
+
+export const THEOSOPHY_MASTERS: UserProfile[] = [
+  {
+    name: "Jiddu Krishnamurti",
+    birthDate: "1895-05-11",
+    birthTime: "00:30",
+    birthPlace: "Madanapalle, India"
+  },
+  {
+    name: "Annie Besant",
+    birthDate: "1847-10-01",
+    birthTime: "17:29",
+    birthPlace: "London, UK"
+  },
+  {
+    name: "C.W. Leadbeater",
+    birthDate: "1854-02-16",
+    birthTime: "Unknown",
+    birthPlace: "Stockport, UK"
+  },
+  {
+    name: "Manly P. Hall",
+    birthDate: "1901-03-18",
+    birthTime: "06:00",
+    birthPlace: "Peterborough, Canada"
+  }
+];
+
+export const HORROR_AUTHORS: UserProfile[] = [
+  {
+    name: "H.P. Lovecraft",
+    birthDate: "1890-08-20",
+    birthTime: "09:00",
+    birthPlace: "Providence, RI, USA"
+  },
+  {
+    name: "Edgar Allan Poe",
+    birthDate: "1809-01-19",
+    birthTime: "01:00",
+    birthPlace: "Boston, MA, USA"
+  },
+  {
+    name: "Mary Shelley",
+    birthDate: "1797-08-30",
+    birthTime: "23:30",
+    birthPlace: "London, UK"
+  },
+  {
+    name: "Stephen King",
+    birthDate: "1947-09-21",
+    birthTime: "01:30",
+    birthPlace: "Portland, ME, USA"
+  }
+];

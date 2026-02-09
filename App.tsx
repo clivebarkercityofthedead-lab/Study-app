@@ -6,8 +6,8 @@ import { VehicleAnalysis } from './components/VehicleAnalysis';
 import { ZodiacComparison } from './components/ZodiacComparison';
 import { KarmicRadar } from './components/KarmicRadar';
 import { AkashicRecords } from './components/AkashicRecords';
-import { ArrowRight, Globe, Scroll, BookOpen, Layers, Star, Feather } from 'lucide-react';
-import { FAMOUS_LEADERS, ESOTERIC_MASTERS } from './constants';
+import { ArrowRight, Globe, Scroll, BookOpen, Layers, Star, Feather, Skull, Eye } from 'lucide-react';
+import { FAMOUS_LEADERS, ESOTERIC_MASTERS, HORROR_AUTHORS, THEOSOPHY_MASTERS } from './constants';
 
 const DEFAULT_PROFILE: UserProfile = {
   name: "Roberto Hernan",
@@ -136,9 +136,9 @@ export default function App() {
                {/* Esoteric Masters */}
                <h3 className="text-sm font-cinzel text-slate-400 mb-4 flex items-center gap-2 uppercase tracking-widest border-t border-slate-700 pt-4">
                  <Feather className="w-4 h-4" /> 
-                 Esoteric & Occult Masters
+                 Founders & Philosophers
                </h3>
-               <div className="grid grid-cols-2 gap-3">
+               <div className="grid grid-cols-2 gap-3 mb-6">
                  {ESOTERIC_MASTERS.map((master, idx) => (
                    <button
                      key={idx}
@@ -147,6 +147,42 @@ export default function App() {
                    >
                      <span className="font-bold text-slate-200 group-hover:text-white">{master.name}</span>
                      <span className="text-[10px] text-slate-500">{master.birthDate}</span>
+                   </button>
+                 ))}
+               </div>
+
+               {/* Theosophists & Mystics */}
+               <h3 className="text-sm font-cinzel text-slate-400 mb-4 flex items-center gap-2 uppercase tracking-widest border-t border-slate-700 pt-4">
+                 <Eye className="w-4 h-4" /> 
+                 Theosophists & Mystics
+               </h3>
+               <div className="grid grid-cols-2 gap-3 mb-6">
+                 {THEOSOPHY_MASTERS.map((mystic, idx) => (
+                   <button
+                     key={idx}
+                     onClick={() => loadPreset(mystic)}
+                     className="text-left text-xs p-3 rounded bg-amber-900/30 hover:bg-amber-900/50 hover:text-amber-300 border border-amber-500/30 transition-colors flex flex-col gap-1 group"
+                   >
+                     <span className="font-bold text-slate-200 group-hover:text-white">{mystic.name}</span>
+                     <span className="text-[10px] text-slate-500">{mystic.birthDate}</span>
+                   </button>
+                 ))}
+               </div>
+
+               {/* Horror Authors */}
+               <h3 className="text-sm font-cinzel text-slate-400 mb-4 flex items-center gap-2 uppercase tracking-widest border-t border-slate-700 pt-4">
+                 <Skull className="w-4 h-4" /> 
+                 Horror & Gothic Authors
+               </h3>
+               <div className="grid grid-cols-2 gap-3">
+                 {HORROR_AUTHORS.map((author, idx) => (
+                   <button
+                     key={idx}
+                     onClick={() => loadPreset(author)}
+                     className="text-left text-xs p-3 rounded bg-red-950/30 hover:bg-red-900/50 hover:text-red-300 border border-red-900/30 transition-colors flex flex-col gap-1 group"
+                   >
+                     <span className="font-bold text-slate-200 group-hover:text-white">{author.name}</span>
+                     <span className="text-[10px] text-slate-500">{author.birthDate}</span>
                    </button>
                  ))}
                </div>
